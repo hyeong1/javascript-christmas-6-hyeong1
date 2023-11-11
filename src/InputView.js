@@ -11,7 +11,7 @@ const InputView = {
     const input = await Console.readLineAsync(
       "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)"
     );
-    return DateCheck.dateCheck(parseInt(input));
+    return [parseInt(input), DateCheck.dateCheck(parseInt(input))];
   },
 };
 
