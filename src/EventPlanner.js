@@ -1,8 +1,7 @@
 import InputView from "./InputView.js";
-import OutputView from "./OutputView.js";
 
 class EventPlanner {
-  #date = {};
+  #date = [];
   constructor() {
     InputView.printStart();
   }
