@@ -9,7 +9,6 @@ class EventPlanner {
 
   async date() {
     this.#date = await InputView.readDate();
-    OutputView.printDate(this.#date);
   }
 }
 
