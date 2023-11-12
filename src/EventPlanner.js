@@ -8,12 +8,11 @@ class EventPlanner {
     InputView.printStart();
   }
 
-  async date() {
+  async event() {
     this.#date = await InputView.readDate();
     this.#menu = await InputView.readMenu();
     OutputView.printEvent(this.#date, this.#menu);
   }
 }
 
-const eventPlanner = new EventPlanner();
-eventPlanner.date();
+export default EventPlanner;
