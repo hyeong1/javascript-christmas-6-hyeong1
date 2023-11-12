@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 
-import PriceCheck from "./PriceCheck.js";
-import EventCheck from "./EventCheck.js";
+import PriceCheck from "./checks/PriceCheck.js";
+import EventCheck from "./checks/EventCheck.js";
 
 const OutputView = {
   price: 0,

@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 
-import DateCheck from "./DateCheck.js";
-import MenuCheck from "./MenuCheck.js";
+import DateCheck from "./checks/DateCheck.js";
+import MenuCheck from "./checks/MenuCheck.js";
 
 const InputView = {
   printStart() {

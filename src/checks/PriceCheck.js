@@ -1,4 +1,4 @@
-import Menu from "./constant/Menu.js";
+import Menu from "../constant/Menu.js";
 
 const PriceCheck = {
   priceBeforeEvent(menus) {
