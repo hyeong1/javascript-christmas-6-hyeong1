@@ -66,17 +66,17 @@ const EventCheck = {
       return 1000;
     }
   },
-  checkBadge(afterPrice) {
-    if (afterPrice < 5000) {
+  checkBadge(sale) {
+    if (sale < 5000) {
       return false;
     }
-    if (afterPrice >= 5000 && afterPrice < 10000) {
+    if (sale >= 5000 && sale < 10000) {
       return "별";
     }
-    if (afterPrice >= 10000 && afterPrice < 20000) {
+    if (sale >= 10000 && sale < 20000) {
       return "트리";
     }
-    if (afterPrice >= 20000) {
+    if (sale >= 20000) {
       return "산타";
     }
   },
