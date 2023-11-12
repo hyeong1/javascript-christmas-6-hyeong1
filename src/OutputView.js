@@ -34,6 +34,7 @@ const OutputView = {
     Console.print("<증정 메뉴>");
     if (EventCheck.isGetFree(this.price)) {
       Console.print("샴페인 1개\n");
+      this.sale += 25000;
     }
     if (!EventCheck.isGetFree(this.price)) {
       Console.print("없음\n");
@@ -89,10 +90,16 @@ const OutputView = {
   },
   printPriceAfterEvent() {
     Console.print("<할인 후 예상 결제 금액>");
+    if (EventCheck.isGetFree(this.price)) {
+      this.sale -= 25000;
+    }
     Console.print(`${(this.price - this.sale).toLocaleString()}원\n`);
   },
   printBadge() {
     Console.print("<12월 이벤트 배지>");
+    if (EventCheck.isGetFree(this.price)) {
+      this.sale += 25000;
+    }
     if (EventCheck.checkBadge(this.sale)) {
       Console.print(EventCheck.checkBadge(this.sale));
     }
