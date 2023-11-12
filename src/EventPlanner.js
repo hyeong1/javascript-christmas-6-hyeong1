@@ -1,4 +1,5 @@
 import InputView from "./InputView.js";
+import OutputView from "./OutputView.js";
 
 class EventPlanner {
   #date = [];
@@ -10,6 +11,8 @@ class EventPlanner {
   async date() {
     this.#date = await InputView.readDate();
     this.#menu = await InputView.readMenu();
+    console.log(this.#menu);
+    OutputView.printEvent(this.#date, this.#menu);
   }
 }
 
