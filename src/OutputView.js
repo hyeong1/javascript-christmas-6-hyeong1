@@ -4,12 +4,14 @@ import PriceCheck from "./PriceCheck.js";
 import EventCheck from "./EventCheck.js";
 
 const OutputView = {
+  price: 0,
   printEvent(date, menus) {
     Console.print(
       `12월 ${date[0]}일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n`
     );
     this.printMenu(menus);
     this.printPriceBeforeEvent(menus);
+    this.printGetFree();
   },
   printMenu(menus) {
     Console.print("<주문 메뉴>");
@@ -19,14 +21,19 @@ const OutputView = {
   },
   printPriceBeforeEvent(menus) {
     Console.print("<할인 전 총주문 금액>");
-    const price = PriceCheck.priceBeforeEvent(menus);
-    Console.print(price + "\n");
-    this.printGetFree(price);
+    this.price = PriceCheck.priceBeforeEvent(menus);
+    Console.print(this.price + "\n");
   },
-  printGetFree(price) {
+  printGetFree() {
     Console.print("<증정 메뉴>");
-    Console.print(EventCheck.isGetFree(price) + "\n");
+    if (EventCheck.isGetFree(this.price)) {
+      Console.print("샴페인 1개\n");
+    }
+    if (!EventCheck.isGetFree(this.price)) {
+      Console.print("없음\n");
+    }
   },
+  printTotalEvent(date) {},
 };
 
 export default OutputView;
