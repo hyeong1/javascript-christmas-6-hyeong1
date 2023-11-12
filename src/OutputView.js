@@ -12,6 +12,7 @@ const OutputView = {
     this.printMenu(menus);
     this.printPriceBeforeEvent(menus);
     this.printGetFree();
+    this.printTotalEvent(date);
   },
   printMenu(menus) {
     Console.print("<주문 메뉴>");
@@ -33,7 +34,12 @@ const OutputView = {
       Console.print("없음\n");
     }
   },
-  printTotalEvent(date) {},
+  printTotalEvent(date) {
+    Console.print("<혜택 내역>");
+    if (EventCheck.isDday(date)) {
+      Console.print(`크리스마스 디데이 할인: -${EventCheck.isDday(date)}`);
+    }
+  },
 };
 
 export default OutputView;
