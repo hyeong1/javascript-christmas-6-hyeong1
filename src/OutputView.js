@@ -34,7 +34,6 @@ const OutputView = {
     Console.print("<증정 메뉴>");
     if (EventCheck.isGetFree(this.price)) {
       Console.print("샴페인 1개\n");
-      this.sale = 25000;
     }
     if (!EventCheck.isGetFree(this.price)) {
       Console.print("없음\n");
@@ -57,6 +56,9 @@ const OutputView = {
     if (EventCheck.isStar(date)) {
       Console.print(`특별 할인: -${EventCheck.isStar(date)}원`);
       this.sale += EventCheck.isStar(date);
+    }
+    if (EventCheck.isGetFree(this.price)) {
+      Console.print("증정 이벤트: -25000원");
     }
     if (
       !EventCheck.isDday(date) &&
