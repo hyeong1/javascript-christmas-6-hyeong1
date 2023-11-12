@@ -64,7 +64,16 @@ const OutputView = {
   },
   printPriceAfterEvent() {
     Console.print("<할인 후 예상 결제 금액>");
-    Console.print(`${this.price - this.sale}원`);
+    Console.print(`${this.price - this.sale}원\n`);
+  },
+  printBadge() {
+    Console.print("<12월 이벤트 배지>");
+    if (EventCheck.checkBadge(this.price - this.sale)) {
+      Console.print(EventCheck.checkBadge(this.price - this.sale));
+    }
+    if (!EventCheck.checkBadge(this.price - this.sale)) {
+      Console.print("없음");
+    }
   },
 };
 
