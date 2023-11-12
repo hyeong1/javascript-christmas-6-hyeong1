@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 
 import PriceCheck from "./PriceCheck.js";
+import EventCheck from "./EventCheck.js";
 
 const OutputView = {
   printEvent(date, menus) {
@@ -18,7 +19,13 @@ const OutputView = {
   },
   printPriceBeforeEvent(menus) {
     Console.print("<할인 전 총주문 금액>");
-    Console.print(PriceCheck.priceBeforeEvent(menus) + "\n");
+    const price = PriceCheck.priceBeforeEvent(menus);
+    Console.print(price + "\n");
+    this.printGetFree(price);
+  },
+  printGetFree(price) {
+    Console.print("<증정 메뉴>");
+    Console.print(EventCheck.isGetFree(price) + "\n");
   },
 };
 
