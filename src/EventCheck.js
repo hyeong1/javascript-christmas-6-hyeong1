@@ -16,7 +16,6 @@ const EventCheck = {
     }
   },
   isWeek(date, menu) {
-    // console.log(menu);
     const dessert = ["초코케이크", "아이스크림"];
     let counter = 0;
     if (!date[1].isWeek) {
