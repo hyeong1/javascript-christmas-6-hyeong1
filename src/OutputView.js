@@ -60,7 +60,7 @@ const OutputView = {
   printTotalSale() {
     Console.print("");
     Console.print("<총혜택 금액>");
-    Console.print(`-${this.price}원\n`);
+    Console.print(`-${this.sale}원\n`);
   },
   printPriceAfterEvent() {
     Console.print("<할인 후 예상 결제 금액>");
