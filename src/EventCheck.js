@@ -66,6 +66,20 @@ const EventCheck = {
       return 1000;
     }
   },
+  checkBadge(afterPrice) {
+    if (afterPrice < 5000) {
+      return false;
+    }
+    if (afterPrice >= 5000 && afterPrice < 10000) {
+      return "별";
+    }
+    if (afterPrice >= 10000 && afterPrice < 20000) {
+      return "트리";
+    }
+    if (afterPrice >= 20000) {
+      return "산타";
+    }
+  },
 };
 
 export default EventCheck;
