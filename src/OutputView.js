@@ -12,7 +12,7 @@ const OutputView = {
     this.printMenu(menus);
     this.printPriceBeforeEvent(menus);
     this.printGetFree();
-    this.printTotalEvent(date);
+    this.printTotalEvent(date, menus);
   },
   printMenu(menus) {
     Console.print("<주문 메뉴>");
@@ -23,7 +23,7 @@ const OutputView = {
   printPriceBeforeEvent(menus) {
     Console.print("<할인 전 총주문 금액>");
     this.price = PriceCheck.priceBeforeEvent(menus);
-    Console.print(this.price + "\n");
+    Console.print(this.price + "원\n");
   },
   printGetFree() {
     Console.print("<증정 메뉴>");
@@ -34,10 +34,13 @@ const OutputView = {
       Console.print("없음\n");
     }
   },
-  printTotalEvent(date) {
+  printTotalEvent(date, menu) {
     Console.print("<혜택 내역>");
     if (EventCheck.isDday(date)) {
-      Console.print(`크리스마스 디데이 할인: -${EventCheck.isDday(date)}`);
+      Console.print(`크리스마스 디데이 할인: -${EventCheck.isDday(date)}원`);
+    }
+    if (EventCheck.isWeek(date, menu)) {
+      Console.print(`평일 할인: ${EventCheck.isWeek(date, menu)}원`);
     }
   },
 };
