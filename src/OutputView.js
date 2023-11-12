@@ -17,8 +17,9 @@ const OutputView = {
   printMenu(menus) {
     Console.print("<주문 메뉴>");
     for (const [key, value] of Object.entries(menus)) {
-      Console.print(`${key} ${value}개\n`);
+      Console.print(`${key} ${value}개`);
     }
+    Console.print("");
   },
   printPriceBeforeEvent(menus) {
     Console.print("<할인 전 총주문 금액>");
@@ -40,7 +41,7 @@ const OutputView = {
       Console.print(`크리스마스 디데이 할인: -${EventCheck.isDday(date)}원`);
     }
     if (EventCheck.isWeek(date, menu)) {
-      Console.print(`평일 할인: ${EventCheck.isWeek(date, menu)}원`);
+      Console.print(`평일 할인: -${EventCheck.isWeek(date, menu)}원`);
     }
   },
 };
