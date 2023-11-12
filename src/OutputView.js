@@ -58,6 +58,14 @@ const OutputView = {
       Console.print(`특별 할인: -${EventCheck.isStar(date)}원`);
       this.sale += EventCheck.isStar(date);
     }
+    if (
+      !EventCheck.isDday(date) &&
+      !EventCheck.isWeek(date, menu) &&
+      !EventCheck.isWeekend(date, menu) &&
+      !EventCheck.isStar(date)
+    ) {
+      Console.print("없음");
+    }
   },
   printTotalSale() {
     Console.print("");
