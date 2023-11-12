@@ -58,6 +58,14 @@ const EventCheck = {
       return false;
     }
   },
+  isStar(date) {
+    if (!date[1].isStar) {
+      return false;
+    }
+    if (date[1].isStar) {
+      return 1000;
+    }
+  },
 };
 
 export default EventCheck;
