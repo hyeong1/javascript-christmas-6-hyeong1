@@ -15,6 +15,8 @@ const OutputView = {
     this.printGetFree();
     this.printTotalEvent(date, menus);
     this.printTotalSale();
+    this.printPriceAfterEvent();
+    this.printBadge();
   },
   printMenu(menus) {
     Console.print("<주문 메뉴>");
@@ -68,10 +70,10 @@ const OutputView = {
   },
   printBadge() {
     Console.print("<12월 이벤트 배지>");
-    if (EventCheck.checkBadge(this.price - this.sale)) {
-      Console.print(EventCheck.checkBadge(this.price - this.sale));
+    if (EventCheck.checkBadge(this.sale)) {
+      Console.print(EventCheck.checkBadge(this.sale));
     }
-    if (!EventCheck.checkBadge(this.price - this.sale)) {
+    if (!EventCheck.checkBadge(this.sale)) {
       Console.print("없음");
     }
   },
