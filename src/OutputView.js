@@ -43,6 +43,9 @@ const OutputView = {
     if (EventCheck.isWeek(date, menu)) {
       Console.print(`평일 할인: -${EventCheck.isWeek(date, menu)}원`);
     }
+    if (EventCheck.isWeekend(date, menu)) {
+      Console.print(`주말 할인: -${EventCheck.isWeekend(date, menu)}원`);
+    }
   },
 };
 
