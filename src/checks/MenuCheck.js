@@ -31,8 +31,23 @@ const MenuCheck = {
       return isNaN(value);
     }
   },
+  isUnder20() {
+    let counter = 0;
+    for (const [key, value] of Object.entries(this.menuResult)) {
+      counter += value;
+    }
+    if (counter > 20) {
+      return false;
+    }
+    return true;
+  },
   typeCheck() {
-    if (this.isOnlyDrink() || !this.isExistMenu() || this.isNum()) {
+    if (
+      this.isOnlyDrink() ||
+      !this.isExistMenu() ||
+      this.isNum() ||
+      !this.isUnder20()
+    ) {
       throw new Error("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
     }
   },
