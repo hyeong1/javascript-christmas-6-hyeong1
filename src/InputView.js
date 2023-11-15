@@ -9,9 +9,21 @@ const InputView = {
   },
 
   async readDate() {
-    const input = await Console.readLineAsync(
-      "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n"
-    );
+    let input;
+    let isValid = false;
+
+    while (!isValid) {
+      try {
+        input = await Console.readLineAsync(
+          "12월 중 식당 예상 방문 날짜는 언제인가요? (숫자만 입력해 주세요!)\n"
+        );
+        DateCheck.dateCheck(parseInt(input));
+        isValid = true;
+      } catch (error) {
+        Console.print(error.message);
+      }
+    }
+    console.log(parseInt(input));
     return [parseInt(input), DateCheck.dateCheck(parseInt(input))];
   },
 
