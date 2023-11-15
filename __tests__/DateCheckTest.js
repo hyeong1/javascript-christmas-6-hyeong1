@@ -18,4 +18,10 @@ describe("날짜 체크 클래스 테스트", () => {
       DateCheck.dateCheck(0);
     }).toThrow("[ERROR]");
   });
+
+  test("숫자가 아닌 문자가 입력되면 예외가 발생한다.", () => {
+    expect(() => {
+      DateCheck.dateCheck("assf");
+    }).toThrow("[ERROR]");
+  });
 });
