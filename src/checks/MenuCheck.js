@@ -29,9 +29,9 @@ const MenuCheck = {
     }
   },
   typeCheck() {
-    this.isOnlyDrink();
-    this.isExistMenu();
-    this.isNum();
+    if (this.isOnlyDrink() || this.isExistMenu() || this.isNum()) {
+      throw new Error("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+    }
   },
   menuCheck(menus) {
     const menu = menus.split(",");
@@ -39,6 +39,7 @@ const MenuCheck = {
       const [name, quantity] = menuItem.split("-");
       this.menuResult[name] = parseInt(quantity, 10);
     });
+    this.typeCheck();
     return this.menuResult;
   },
 };
