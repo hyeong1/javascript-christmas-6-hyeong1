@@ -10,26 +10,32 @@ const MenuCheck = {
         counter++;
       }
       if (counter == Object.keys(this.menuResult).length) {
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   },
   isExistMenu() {
     for (const [key, value] of Object.entries(this.menuResult)) {
       if (!Menu.hasOwnProperty(key)) {
-        return true;
+        return false;
       }
     }
-    return false;
+    return true;
   },
   isNum() {
+    if (this.menuResult.name < 1) {
+      return false;
+    }
+    if (isNaN(parseInt(this.menuResult.name))) {
+      return false;
+    }
     for (const [key, value] of Object.entries(this.menuResult)) {
       return isNaN(value);
     }
   },
   typeCheck() {
-    if (this.isOnlyDrink() || this.isExistMenu() || this.isNum()) {
+    if (!this.isOnlyDrink() || !this.isExistMenu() || !this.isNum()) {
       throw new Error("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
     }
   },
