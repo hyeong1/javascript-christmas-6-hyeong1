@@ -21,7 +21,6 @@ const InputView = {
         input = await Console.readLineAsync(error.message + "\n");
       }
     }
-    console.log(parseInt(input));
     return [parseInt(input), DateCheck.dateCheck(parseInt(input))];
   },
 
