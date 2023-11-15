@@ -13,6 +13,7 @@ const MenuCheck = {
         return true;
       }
     }
+    return false;
   },
   isExistMenu() {
     for (const [key, value] of Object.entries(this.menuResult)) {
@@ -20,6 +21,7 @@ const MenuCheck = {
         return true;
       }
     }
+    return false;
   },
   isNum() {
     for (const [key, value] of Object.entries(this.menuResult)) {
